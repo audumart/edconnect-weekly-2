@@ -27,10 +27,12 @@ function id(){
 
 
     let Martin = new User(id(), 'Martin', 'Audu', 'audumart@gmail.com', 'martinchillout', '16/0013', 'Computer Science', '2020');
+   
 
    
 class Users extends DataModel {
     authenticate(email, password) {
+        if 
 
     }
 

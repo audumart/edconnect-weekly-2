@@ -8,7 +8,10 @@ class DataModel {
     }
 
     getById(id) {
-
+        if (this.data(id)) {
+            return true;
+        }
+        return null;
     }
 
     save(obj) {
@@ -20,11 +23,19 @@ class DataModel {
     }
 
     update(obj, id) {
-
+        if (this.data(obj)) {
+            this.data.push(id);
+            return true;
+        }
+        return false;
     }
 
     delete(id) {
-
+        if (this.data(id)) {
+            this.data.pop(id);
+            return true;
+        }
+        return false;
     }
 
     // this method will be overriden in the sub classes
@@ -32,6 +43,7 @@ class DataModel {
         return false;
     }
 }
+
 
 // Do not worry about the below for now; It is included so that we can test your code
 // We will cover module exports in later parts of this course
