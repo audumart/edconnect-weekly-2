@@ -2,14 +2,33 @@ const DataModel = require('./data_model');
 
 class User {
     constructor(id, firstname, lastname, email, password, matricNumber, program, graduationYear) {
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.password = password;
+        this.matricNumber = matricNumber;
+        this.program = program;
+        this.graduationYear = graduationYear;
 
     }
+   
 
     getFullName() {
+        console.log(this.firstname, this.lastname)
 
     }
 }
+function id(){
+    return Math.random()
+                .toString(36)
+                .substring(2);
+}
 
+
+    let Martin = new User(id(), 'Martin', 'Audu', 'audumart@gmail.com', 'martinchillout', '16/0013', 'Computer Science', '2020');
+
+   
 class Users extends DataModel {
     authenticate(email, password) {
 
