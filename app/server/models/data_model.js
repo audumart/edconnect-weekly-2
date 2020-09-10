@@ -9,7 +9,7 @@ class DataModel {
 
     getById(id) {
         if (this.data(id)) {
-            return true;
+            return this.id;
         }
         return null;
     }

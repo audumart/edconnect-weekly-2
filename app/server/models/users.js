@@ -32,11 +32,19 @@ function id(){
    
 class Users extends DataModel {
     authenticate(email, password) {
-        if 
-
+        if (this.email == email && this.password == password) {
+            return true;
+        }
+        return null;
     }
 
     getByEmail(email) {
+        if (this.email == email) {
+            return this.email;
+        }
+        return null;
+    }
+
 
     }
 
