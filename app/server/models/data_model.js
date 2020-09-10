@@ -8,10 +8,13 @@ class DataModel {
     }
 
     getById(id) {
-        if (this.data(id)) {
-            return this.id;
+        let obj = this.data.find(obj => obj.id == id)
+        if (obj === undefined) {
+            return null;
+        } else {
+            return obj;
         }
-        return null;
+        
     }
 
     save(obj) {
@@ -23,19 +26,33 @@ class DataModel {
     }
 
     update(obj, id) {
-        if (this.data(obj)) {
-            this.data.push(id);
-            return true;
-        }
-        return false;
+       let item = this.data.find(item => item.id == id);
+       if (item === undefined){
+           return false;
+       }
+       else{
+           for (var x in item){
+               for (var y in obj){
+                   if (x === y){
+                       item[x] = obj[y];
+                   }
+                   else {
+                       continue;
+                   }
+               }
+           }
+           return true;
+       } 
     }
 
     delete(id) {
-        if (this.data(id)) {
-            this.data.pop(id);
-            return true;
-        }
-        return false;
+       var index = this.data.map(function(item){return item.id;}).indexOf(id);
+       if (index > -1){
+           this.data.splice(index, 1);
+           return true;
+       } else if(index === -1){
+           return false;
+       }
     }
 
     // this method will be overriden in the sub classes

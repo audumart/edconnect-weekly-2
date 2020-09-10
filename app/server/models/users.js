@@ -39,11 +39,7 @@ class Users extends DataModel {
     }
 
     getByEmail(email) {
-        if (this.email == email) {
-            return this.email;
-        }
-        return null;
-    }
+    
 
 
     }
