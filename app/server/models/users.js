@@ -15,7 +15,7 @@ class User {
    
 
     getFullName() {
-        console.log(this.firstname+ "" +this.lastname);
+        return (this.firstname + "" + this.lastname);
 
     }
 }
