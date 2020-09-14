@@ -10,13 +10,28 @@ class User {
         this.matricNumber = matricNumber;
         this.program = program;
         this.graduationYear = graduationYear;
+
     }
+   
 
     getFullName() {
-        return this.firstname + " " + this.lastname;
+       console.log (this.firstname + " " + this.lastname);
+
     }
 }
+function id(){
+    return Math.random()
+                .toString(36)
+                .substring(2);
+}
 
+
+
+
+
+   
+
+   
 class Users extends DataModel {
     authenticate(email, password) {
         var user = this.getByEmail(email);
@@ -72,6 +87,8 @@ class Users extends DataModel {
         return true;
     }
 }
+
+   
 
 // Do not worry about the below for now; It is included so that we can test your code
 // We will cover module exports in later parts of this course
